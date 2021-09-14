@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Don't use this file if Knative is to be installed. Istio will be installed by the script 
+# knative+istio-install.sh
+
 # See:
 # - https://istio.io/latest/docs/setup/getting-started/
 # - https://www.oreilly.com/library/view/istio-up-and/9781492043775/ch04.html
