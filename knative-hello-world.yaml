@@ -1,0 +1,27 @@
+# 
+# Taken from https://knative.dev/docs/getting-started/first-service/
+#
+# To ping the hello world application, do 
+# curl -H "Host: hello.default.example.com" 172.18.0.7:30029
+# hello.default.example.com is found with the command 'kn service list'
+# 172.18.0.7 is found with the command 
+# kubectl get po -l istio=ingressgateway -n istio-system -o jsonpath='{.items[0].status.hostIP}'
+# 30029 is found with the command 'kubectl get services -n istio-system'
+#
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello
+spec:
+  template:
+    metadata:
+      # This is the name of our new "Revision," it must follow the convention {service-name}-{revision-name}
+      name: hello-world
+    spec:
+      containers:
+        - image: gcr.io/knative-samples/helloworld-go
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TARGET
+              value: 'World'
