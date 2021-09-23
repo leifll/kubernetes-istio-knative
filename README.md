@@ -1,2 +1,3 @@
-# kubernetes-istio-knative
-Illustrates how to create a kubernetes cluster with istio and knative, and an ingress controller, on kind.
+# Kubernetes, Istio, Knative, Flux and Flagger
+
+Commands to create a kubernetes cluster with istio, knative, flux and flagger. This works on the kind cluster created with the scripts in the kind-startup repo.
